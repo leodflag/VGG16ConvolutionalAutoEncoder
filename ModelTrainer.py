@@ -19,11 +19,11 @@ if __name__ == '__main__':
         weight_file=os.path.join(model_and_weight_storing_dir, 'vgg16_weights_notop.h5'),
         number_of_layers_to_freeze_from_input_layer=10
     )
-
+    #  完成模型建構後可用keras-compile()來配置學習過程
     vgg16_auto_encoder_generator.auto_encoder.compile(
-        loss='binary_crossentropy',
-        optimizer='adadelta',
-        metrics=['accuracy']
+        loss='binary_crossentropy',  #  損失函數
+        optimizer='adadelta',  #  優化器
+        metrics=['accuracy']  # 評估標準  準確性
     )
 
     base_data_source_dir = 'data_source'
